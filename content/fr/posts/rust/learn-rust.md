@@ -17,7 +17,7 @@ intéressantes !
 
 ## Les principales caractéristiques
 
-Rust a un syntax bien différente de C# (proche du Python), ne propose pas de
+Rust a un syntax bien différente de C# (plus proche du celle de Python), ne propose pas de
 *garbage collector* et possède une mascotte : tout semblait coché pour lui
 donner une chance !
 
@@ -42,4 +42,9 @@ J'ai décidé de découper chaque fonctionnalité que j'ai trouvé importante da
 article dédié : c'est donc purement subjectif, absolument pas exhaustif et à pour
 but de plutôt fournir une petite introduction au langage :
 
-- [Introduction à Rust (1) : ownership & borrowing](/rust/ownership-borrowing)
+- [Introduction à Rust (1) : ownership & borrowing](01-rust-ownership-borrowing)
+- [Introduction à Rust (2) : gestion de la mémoire et lifetime](02-rust-memory-and-lifetime)
+- [Introduction à Rust (3) : les enums et gestion des erreurs]
+- [Introduction à Rust (4) : orienté objet ?]
+- [Introduction à Rust (5) : un ecosystème bien pensé]
+- [Introduction à Rust (6) : programmation concurrente]
