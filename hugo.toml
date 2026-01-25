@@ -4,7 +4,11 @@ defaultContentLanguage = 'fr'
 title = 'Quentin Tran'
 theme = 'terminal'
 
+tags = ['Rust', 'C#', 'Unity', 'Learn', 'Programming', 'Book', 'Game']
+
 pagination.pagerSize = 8
+
+summaryLength = 0
 
 # Required for Chroma and the custom syntax highlighting.
 # [markup.highlight]
@@ -13,13 +17,13 @@ pagination.pagerSize = 8
 [params]
     # dir name of your main content (default is `content/posts`).
     # the list of set content will show up on your index page (baseurl).
-    #contentTypeName = "posts"
+    # contentTypeName = "posts"
 
     # if you set this to 0, only submenu trigger will be visible
     showMenuItems = 2
 
     # show selector to switch language
-    showLanguageSelector = true
+    #showLanguageSelector = true
 
     # set theme to full screen width
     fullWidthTheme = false
@@ -40,7 +44,7 @@ pagination.pagerSize = 8
     # updatedDatePrefix = "Updated"
 
     # whether to show a page's estimated reading time
-    # readingTime = false # default
+    readingTime = true # default
 
     # whether to show a table of contents
     # can be overridden in a page's front-matter
