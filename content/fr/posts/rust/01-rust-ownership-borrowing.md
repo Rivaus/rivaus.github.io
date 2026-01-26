@@ -153,3 +153,33 @@ fn modify_foo(foo : &mut Foo) {
     foo.property = 16;
 }
 ```
+
+## Conclusion
+
+Premier pas, et pas des plus facile, dans le monde Rust avec ce concept fondamental
+de l'*ownership*. Il peut paraitre contraignant aux premiers abords mais vise à
+réduire les sources de bug et permet au compilateur des optimisations impossibles
+sans ces informations !
+
+Autre élément que nous avons découvert ici : tout est explicite en Rust,
+la lecture du code est d'autant plus facilité. Les notions de passer un argument
+par *propriété*, référence ou référence muable fonctionne également quand on définit
+des méthodes d'instance d'un objet :
+
+```rust
+struct Foo {
+    property : u32
+}
+
+
+impl Foo {
+    // self renvoie à l'instance, comme en Python, équivalent de this en C# ou Java
+    
+    // Print ne modfie pas l'objet, donc une référence suffit
+    fn print_data(&self) {
+        println!("Foo's property equals {}", self.property)
+    }
+    
+    fn set_property(&self, )
+}
+```
