@@ -70,7 +70,7 @@ Idem pour les références, par défaut, la référence pointera vers une valeur
 
 ```rust
 fn main() {
-    let mut a = Foo::new(); // a peut être modifiée
+    let mut a = Foo::new(); // a devient modifiée
     modify_foo(&mut a); // On crée une référence vers une valeur modifiable
     println!("{a:?}");
 }
@@ -82,28 +82,7 @@ fn modify_foo(foo : &mut Foo) { // la méthode requiert une référence modifiab
 
 Le code fonctionne et affiche `Foo { property: 16 }`, YOUPI !
 
-Notes pour les gourmands :
-
-- on ne peut créer une référence vers une valeur modiable que si la valeur a été
-définie comme modifiable :
-
-```rust
-let a = Foo::new();
-let ref_to_a = &mut a; // ne compile pas car a n'est pas mut.
-```
-
-- une référence peut être muable, c'est à dire qu'on peut changer vers quelle valeur
-elle pointe, c'est indépendant du caractère muable ou non de la valeur pointée.
-
-```rust
-let a = Foo::new();
-let b = Foo::new();
-let mut ref_to_a = &a;
-// on peut changer vers quoi la référence point mais pas les objets pointés
-ref_to_a = &b; 
-```
-
-## Reègles du borrowing : on peut emprunter mais pas n'importe comment !
+## Reègles du borrowing : on peut emprunter mais pas n'importe comment
 
 Modifions un peu notre code :
 
@@ -111,7 +90,7 @@ Modifions un peu notre code :
 fn main()
 {
     let mut a = Foo::new();
-    let b = &mut a;
+    let b = &mut a; // Soyons fous, créons une seconde référence pour modifier a
     modify_foo(&mut a);
     b.property = 20;
 }
@@ -121,20 +100,21 @@ fn modify_foo(foo : &mut Foo) {
 }
 ```
 
-Le compilateur nous blqoque à nouveau : `cannot borrow a as mutable more than
-once at a time`. Il nous previent d'une règle fondamentale du *borrowing*, on
-peut créer des références :
+Le compilateur nous bloque à nouveau : `cannot borrow a as mutable more than
+once at a time`. Il nous previent d'une règle fondamentale du *borrowing* : on
+peut créer des références de la sorte:
 
-- soit N références actives immuables vers un objet
-- soit une et une seule référence muable active vers un object
+- soit N références actives vers un objet immuable
+- soit une et une seule référence active vers un object muable
 
 Cela est important pour prévenir les *data race* : ici il n'est pas sécurisé de lire
-ou modifier a dans `modify_foo` en créant une référence (muable ou non) car une
-référence muable `b` a été créée et pourrait modifier `a` a tout moment !
-Le compilateur est exigeant, mais pour notre bien, pour évider d'éventuels bugs.
+ou de modifier a dans `modify_foo` en créant une référence (muable ou non d'ailleurs)
+car une autre référence muable `b` a été créée et pourrait modifier `a` a tout moment
+(dans unautre thread par exemple) ! Le compilateur est exigeant, mais pour notre
+bien,pour évider d'éventuels bugs.
 
 *Note: si on commente la ligne `b.property = 20;`, le compilateur est assez intelligent
-pour voir que le caractère muable de laréférence `b`est inutile et ainsi le code
+pour voir que le caractère muable de la référence `b`est inutile et ainsi le code
 compile*
 
 On peut régler le problème de plusieurs manières :
@@ -149,7 +129,7 @@ fn main()
     let mut a = Foo::new();
     let b = &mut a;
     b.property = 20;
-    modify_foo(&mut a);
+    modify_foo(&mut a); // C'est bon, b ne sera plus utilisée après
 }
 
 fn modify_foo(foo : &mut Foo) {
