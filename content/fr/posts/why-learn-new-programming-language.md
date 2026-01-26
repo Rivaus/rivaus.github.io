@@ -27,29 +27,28 @@ trouvé ça très intéressant.
 
 ## Quel langage choisir ?
 
-La question était donc, quel langage choisir ? Je sais que beaucoup de langages m'ont
-rebuté car ils possédent une syntaxe différente et des conventions de nommage
-différentes de celles des "langages dérivées du C" comme C++, C#, Java, ..
+La question était donc quel langage choisir ? Beaucoup de langages m'ont
+rebuté car ils possédent une syntaxe et des conventions de nommage
+différentes de celles des "langages dérivées du C" comme C++, C#, Java,...
 
 Cependant, je voulais me "forcer" à choisir un de ces langages différents pour
-m'entrainer à être plus flexible, ne pas rester dans un "confort" (même si en soit,
-cela ne pose aucun problème, c'est juste quelque chose que je recherchais ici), et
-également étayer ma *stack* technique.
+m'entrainer à être plus flexible, sortir de ma zone de confort, et étayer
+ma *stack* technique.
 
 Je cherchais donc un langage aux propriétés différentes de C#. Les langages peuvent
 se diffférencier sur plusieurs aspects :
 
 - leur syntaxe,
 - leur gestion de la mémoire,
-- leur ecosystème et domaine de prédilection,
-- leur(s) paradigmes (orienté object, fonctionnel, mixte)
+- leur ecosystème et domaines de prédilection,
+- leurs paradigmes (orienté object, fonctionnel, mixte)
 - leur maturité
 - compilé ou interprété
 
 Deux langages me permettent actuellement de faire ce chemin : Rust et
-Python. Pour pas rendre ce article indigeste, je vais consacrer une série d'articles
-sur ces deux langages, en essayant de mettre en avant leurs spécificités (surtout
-par rapport à C#) et ce qu'ils peuvent nous apporter généralement.
+Python. Pour ne pas rendre ce article indigeste, je vais consacrer une série d'articles
+sur ces deux langages, en essayant de mettre en avant leurs spécificités
+et ce qu'ils peuvent nous apporter.
 
 - [A la découverte de Rust : pourquoi ce language ?](rust/learn-rust)
 - A la découverte de Python (en cours d'écriture)
