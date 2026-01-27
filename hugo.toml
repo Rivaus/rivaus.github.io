@@ -72,7 +72,7 @@ summaryLength = 0
     [languages.en]
         languageName = "English"
         contentDir = 'content/en'
-        title = "Rivaus"
+        title = "Quentin Tran"
 
         [languages.en.params]
             subtitle = "A simple, retro theme for Hugo"
@@ -90,7 +90,7 @@ summaryLength = 0
             words = "words"
 
         [languages.en.params.logo]
-            logoText = "Rivaus"
+            logoText = "Quentin Tran"
             logoHomeLink = "/"
 
         [languages.en.menu]
@@ -102,7 +102,7 @@ summaryLength = 0
     [languages.fr]
         languageName = "Français"
         contentDir = 'content/fr'
-        title = "Rivaus"
+        title = "Quentin Tran"
 
         [languages.fr.params]
             subtitle = "A simple, retro theme for Hugo"
@@ -120,7 +120,7 @@ summaryLength = 0
             words = "mots"
 
             [languages.fr.params.logo]
-                logoText = "Rivaus"
+                logoText = "Quentin Tran"
                 logoHomeLink = "/"
 
             [languages.fr.menu]
