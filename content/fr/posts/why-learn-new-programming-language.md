@@ -2,10 +2,8 @@
 date = '2026-01-15'
 draft = false
 title = 'Pourquoi apprendre un nouveau langage de programmation ?'
-tags = ['Rust', 'C#', 'Learn', 'Programming']
+tags = ['rust', 'C#', 'learn', 'programming']
 +++
-
-## Pourquoi apprendre un nouveau langage de programmation ?
 
 En octobre dernier, après qu'un collègue ait commencé à lire **beaucoup** de
 livres techniques, je me suis motivé à commencer [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
@@ -50,6 +48,6 @@ Python. Pour ne pas rendre ce article indigeste, je vais consacrer une série d'
 sur ces deux langages, en essayant de mettre en avant leurs spécificités
 et ce qu'ils peuvent nous apporter.
 
-- [A la découverte de Rust : pourquoi ce language ?](rust/learn-rust)
+- [A la découverte de Rust](rust/learn-rust)
 - A la découverte de Python (en cours d'écriture)
 - Comment apprendre un nouveau langage de programmation(en cours d'éciture)

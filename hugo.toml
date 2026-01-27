@@ -4,7 +4,7 @@ defaultContentLanguage = 'fr'
 title = 'Quentin Tran'
 theme = 'terminal'
 
-tags = ['Rust', 'C#', 'Unity', 'Learn', 'Programming', 'Book', 'Game']
+tags = ['rust', 'C#', 'unity', 'learn', 'programming', 'book', 'game']
 
 pagination.pagerSize = 8
 
