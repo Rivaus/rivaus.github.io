@@ -185,8 +185,8 @@ fn consume(foo : Foo) {...}
 
 On verra plus tard que les mêmes principes régissent les méthodes d'instance
 d'objet, en coup d'oeil on peut voir si notre objet est modifié quand on appelle
-une de ses méthode. C'est un élément que j'apprécie beaucoup, C++ propose la même chose
-mais avec un choix inverse : la modication possible par défaut, l'immuabilité
+une de ses méthode. C'est un élément que j'apprécie beaucoup, C++ propose la même
+chose mais avec un choix inverse : la modication possible par défaut, l'immuabilité
 en exception, je préfère le choix de Rust.
 
 J'espère que vous avez tenu le coup, rendez vous dans le
