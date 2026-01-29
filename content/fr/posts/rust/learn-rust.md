@@ -39,7 +39,7 @@ Cela a pour but de fournir une petite introduction au langage :
 
 - [(1) : ownership & borrowing](01-rust-ownership-borrowing)
 - [(2) : gestion de la mémoire et lifetime](02-rust-memory-and-lifetime)
-- (3) : les enums et gestion des erreurs *(en cours d'écriture)*
+- [(3) : les enums et gestion des erreurs](03-rust-enum-and-error-handling.md)*(en cours d'écriture)*
 - (4) : orienté objet ? *(en cours d'écriture)*
 - (5) : programmation concurrente *(en cours d'écriture)*
 - (6) : un ecosystème bien pensé *(en cours d'écriture)*
