@@ -41,13 +41,13 @@ fn modify_foo(foo : Foo) {
 
 Problème, cela ne compile pas et Rust retourne l'erreur `borrow of moved value a`.
 En Rust, une variable possède un unique propriétaire, quand on appelle `modify_foo`,
-on transfère la propriété (*ownership*) de Foo à la fonction : la variable `a`
+on transfère la propriété (*ownership*) de `Foo` à la fonction : la variable `a`
 n'est donc plus utilisable dans `main`. Heureusement, on peut partager une référence
-d'un object sans en transférer la propriété. La référence ne fait que qu'emprunter
+vers un object sans en transférer la propriété. La référence ne fait qu'emprunter
 (*borrow* en anglais) l'objet pour une durée déterminée (plus d'info sur cette
 durée dans [l'article suivant](02-rust-memory-and-lifetime)) comme ceci :
 `let reference_to_a = &a`. On peut aussi utiliser `&` pour signifier qu'une
-fonction ne capture qu'une référence vers un objet sans en prendre la possession:
+fonction ne capture qu'une référence vers un objet, sans en prendre la possession:
 
 ```rust
 fn main() {
@@ -64,10 +64,10 @@ fn modify_foo(foo : &Foo) { // Une référence me suffit, pas besoin de plus !
 ## L'immuabilité comme comportement pas défaut, l'explicite comme crédo
 
 Le compilateur n'est toujours pas satisfait, il ne peut pas changer la valeur de
-`foo.property` : par défaut, en Rust, les variables sont immuables, il faut explicitement
+`foo.property`. Par défaut, en Rust, les variables sont immuables. Il faut explicitement
 définir les variables comme modifiables avec le mot-clé `mut`.
 Idem pour les références, par défaut, la référence pointera vers une valeur immuable
-(même si va valeur est définie comme modifiable). Il faut donc également modifier
+(même si la valeur est définie comme modifiable). Il faut donc également modifier
 la signature de notre fonction:
 
 ```rust
@@ -84,7 +84,7 @@ fn modify_foo(foo : &mut Foo) { // la méthode requiert une référence modifiab
 
 Le code fonctionne et affiche `Foo { property: 16 }`, YOUPI !
 
-## Reègles du borrowing : on peut emprunter mais pas n'importe comment
+## Règles du borrowing : on peut emprunter mais pas n'importe comment
 
 Modifions un peu notre code :
 
@@ -103,7 +103,7 @@ fn modify_foo(foo : &mut Foo) {
 ```
 
 Le compilateur nous bloque à nouveau : `cannot borrow a as mutable more than
-once at a time`. Il nous previent d'une règle fondamentale du *borrowing*, on
+once at a time`. Il nous prévient d'une règle fondamentale du *borrowing*, on
 peut créer :
 
 - soit N références actives vers un objet immuable
@@ -121,9 +121,9 @@ code compile*
 
 On peut régler le problème de plusieurs manières :
 
-- On oeut modfier `a` via `b` avant de créer une nouvelle référence modifiable vers
+- On peut modifier `a` via `b` avant de créer une nouvelle référence modifiable vers
 `a`. Puisque la variable `b` n'est pas utilisée ensuite (elle n'est alors plus active),
-le compilateur comprend qu'il n'y a aucun risque a créer une nouvelle référence pour
+le compilateur comprend qu'il n'y a aucun risque à créer une nouvelle référence pour
 modifier l'objet.
 
 ```rust
@@ -169,10 +169,10 @@ ces vérifications se font à la compilation et ne viennent donc pas impacter le
 performances de nos applications.
 
 Autre élément que nous avons découvert ici : tout est explicite en Rust,
-la lecture du code est d'autant plus facilité.
+la lecture du code en est d'autant plus facilitée.
 
 ```rust
-// Print ne modfie pas l'objet, donc une référence suffit
+// Print ne modifie pas l'objet, donc une référence suffit
 fn print_data(foo : &foo) {...}
 
 // On voit directement que cette méthode modifie l'objet
@@ -185,8 +185,8 @@ fn consume(foo : Foo) {...}
 
 On verra plus tard que les mêmes principes régissent les méthodes d'instance
 d'objet, en coup d'oeil on peut voir si notre objet est modifié quand on appelle
-une de ses méthode. C'est un élément que j'apprécie beaucoup, C++ propose la même
-chose mais avec un choix inverse : la modication possible par défaut, l'immuabilité
+une de ses méthode. C'est un élément que j'apprécie beaucoup. C++ propose la même
+chose mais avec un choix inverse : la modification possible par défaut, l'immuabilité
 en exception, je préfère le choix de Rust.
 
 J'espère que vous avez tenu le coup, rendez vous dans le
