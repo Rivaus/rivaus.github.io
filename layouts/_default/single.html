@@ -55,8 +55,10 @@
   {{ end }}
 </article>
 
+{{ if eq .Section "posts" }}
 {{ if .Site.Params.giscus.enable }}
   {{ partial "giscus.html" . }}
+{{ end }}
 {{ end }}
 
 {{ end }}
