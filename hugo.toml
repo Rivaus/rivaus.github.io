@@ -68,6 +68,15 @@ summaryLength = 0
     # Example format, with date, time, and timezone abbreviation:
     # dateFormat = "2006-01-02 3:04:06 PM MST"
 
+[params.giscus]
+    enable = true
+    repo = "Rivaus/rivaus.github.io"
+    repoId = "R_kgDOQ_9BWw"
+    category = "General"
+    categoryId = "DIC_kwDOQ_9BW84C1py8"
+    lazyLoading = false
+    theme = "transparent_dark"
+
 [languages]
     [languages.en]
         languageName = "English"
