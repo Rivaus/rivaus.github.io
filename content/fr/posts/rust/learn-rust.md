@@ -23,7 +23,7 @@ Si on cherche sur Internet les caractéristiques du langage, on tombe sur :
 
 - sécurisé du point de vue de la mémoire et de la programmation concurrente : le
 langage semble promettre des programmes moins buggés,
-- *blazingly fast* : on peut donc s'attendre à un langage assez *bas niveau*
+- *blazingly fast* [^1]: on peut donc s'attendre à un langage assez *bas niveau*
 : le langage est d'ailleurs [entré récemment officiellement dans le kernel Linux](https://thenewstack.io/rust-goes-mainstream-in-the-linux-kernel/)
 aux côtés de C. Cependant, il semble aussi utilisé pour des applications
 plus haut niveau comme des serveurs web,
@@ -47,3 +47,7 @@ Cela a pour but de fournir une petite introduction au langage :
 D'ailleurs, si après tout cela, l'envie vous prend d'apprendre ce langage,
 sachez que le [tutorial officiel](https://doc.rust-lang.org/book/) est de
 très très bonne qualité !
+
+[^1]: L'utilisation de l'expression *blazzingly fast* est devenue une sorte de meme
+dans la communauté Rust. Le langage promettant des hautes performances, beaucoup de libraires
+ou articles ont utilisé ces mots au début pour mettre en avant cet caractéristique.
