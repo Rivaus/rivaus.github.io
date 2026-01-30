@@ -11,3 +11,9 @@ Pleins d'autres passions en dehors de tout ça, souvent liées à la nourriture.
 
 J'utilise éventellement l'IA pour review mes articles, pour m'aider dans la traduction
 en anglais mais pas pour écrire le contenu.
+
+Réseaux
+
+- [Linkedin](https://www.linkedin.com/in/quentin-tran/)
+- [Arstation](https://www.artstation.com/quentintran) : pas du tout graphiste mais
+grand amoureux de [Blender](https://www.blender.org/)
