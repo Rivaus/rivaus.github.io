@@ -48,7 +48,7 @@ fn print_document_info(doc: &Document) {
 La plupart des langages de programmation permettent de définir qu'une variable
 puisse avoir une valeur ou non. Cela pase souvent par des objets spéciaux génériques:
 [std::optional](https://en.cppreference.com/w/cpp/utility/optional.html) en C++ ou
-[Nullable<T>](https://learn.microsoft.com/fr-fr/dotnet/api/system.nullable-1?view=net-10.0).
+[Nullable\<T>](https://learn.microsoft.com/fr-fr/dotnet/api/system.nullable-1?view=net-10.0).
 
 En Rust, on il existe une *enum* générique dans la librairie standard :
 
