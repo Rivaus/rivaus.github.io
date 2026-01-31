@@ -39,7 +39,7 @@ fn print_document_info(doc: &Document) {
         Document::Article(content) => {
             println!("Article : {}", content);
         }
-    }
+    };
 }
 ```
 
@@ -66,9 +66,9 @@ la manière de les traiter avec le mot clé `match` :
 fn print_user_info(name: Option<String>)
 {
     match name {
-        Some(n) => println!("[User. Name {n}"),
-        None => println!("[User. Unknown") // obliger de gérer ce cas
-    }
+        Some(n) => println!("[User. Name {n}]"),
+        None => println!("[User. Unknown]") // obliger de gérer ce cas
+    };
 }
 ```
 
@@ -80,7 +80,7 @@ sommes obligés[^1] de tester que nous avons bien une valeur :
 ```rust
 let x: Option<String> = ...;
 if let Some(n) = x {
-    println!("[User. Name {n}")
+    println!("[User. Name {n}]")
 }
 ```
 
