@@ -9,8 +9,8 @@ ou découvre !
 
 Beaucoup d'autres passions en dehors de tout ça, souvent liées à la nourriture.
 
-J'utilise éventuellement l'IA pour review mes articles, pour m'aider dans la traduction
-en anglais mais pas pour écrire le contenu.
+J'utilise éventuellement l'IA pour relire mes articles, pour m'aider dans la traduction
+en anglais mais pas pour générer le contenu.
 
 Réseaux
 
