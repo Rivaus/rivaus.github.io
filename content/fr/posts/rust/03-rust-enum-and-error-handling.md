@@ -14,7 +14,7 @@ enum Level {
 }
 ```
 
-Les énumérations definissent un type qui ne peut ne peut prendre qu'un nombre fini
+Les énumérations définissent un type qui ne peut ne peut prendre qu'un nombre fini
 de valeurs, rien de plus. Ici, une variable du type `Level` ne pourra valoir que
 `Low`,`Medium` ou `High`. Rien de bien nouveau si vous êtes développeur.
 
@@ -46,11 +46,11 @@ fn print_document_info(doc: &Document) {
 ## Les énumérations pour définir une valeur optionnelle
 
 La plupart des langages de programmation permettent de définir qu'une variable
-puisse avoir une valeur ou non. Cela pase souvent par des objets spéciaux génériques:
+puisse avoir une valeur ou non. Cela passe souvent par des objets spéciaux génériques:
 [std::optional](https://en.cppreference.com/w/cpp/utility/optional.html) en C++ ou
 [Nullable\<T>](https://learn.microsoft.com/fr-fr/dotnet/api/system.nullable-1?view=net-10.0).
 
-En Rust, on il existe une *enum* générique dans la librairie standard :
+En Rust, il existe une *enum* générique dans la librairie standard :
 
 ```rust
 enum Option<T> {
@@ -72,9 +72,9 @@ fn print_user_info(name: Option<String>)
 }
 ```
 
-`match` requiert que tous les possibilités soient traitées pour compiler, le language
-nous *force* donc à traiter le cas ou le prénom de serait pas renseigné. Cela évite
-les bugs.Idem avec les syntaxes plus courtes pour traiter un cas spécifique, nous
+`match` requiert que tous les possibilités soient traitées pour compiler, le langage
+nous *force* donc à traiter le cas où le prénom ne serait pas renseigné. Cela évite
+les bugs. Idem avec les syntaxes plus courtes pour traiter un cas spécifique, nous
 sommes obligés[^1] de tester que nous avons bien une valeur :
 
 ```rust
@@ -88,11 +88,11 @@ Cela renforce encore la sécurité de nos programmes.
 
 ## Les énumérations pour gérer des erreurs
 
-Rust ne possède pas d'exception pour gérer les erreurs mais deux autres mécaniques.
-Le premier est la panique, il est à utiliser quand le programme est dans un état
-*irrécupérable* pour finir son exécution avec un message d'erreur. Le second
-est moins brutale et témoigne du non succès d'une opération (par exemple le *parsing*
-d'une chaîne de caractères) et reposent sur l'*enum* générique `Result<T, E>`:
+Rust ne possède pas d'exception pour gérer les erreurs, mais deux autres mécanismes.
+Le premier est *la panique* qui est à utiliser quand le programme est dans un état
+*irrécupérable*, pour finir son exécution avec un message d'erreur. Le second
+est moins brutal et témoigne du non-succès d'une opération (par exemple le *parsing*
+d'une chaîne de caractères) et repose sur l'*enum* générique `Result<T, E>`:
 
 ```rust
 enum Result<T, E> {
@@ -110,21 +110,22 @@ fn main(){
 }
 ```
 
-La méthode `parse_to_int` nous renvoit un résultat sous la forme d'un entier
-si c'est un succès et d'une chaine de caratctères si c'est une erreur (surement un
-message contenant plus d'information)[^2]. Encore une fois avec les mécanismes vu
-précédement, Rust insiste très fortement pour que l'on traite le cas d'erreur. De
-plus, nous pouvoir voir directement dans la signature de la fonction que celle ci
-peut échouer.
+La méthode `parse_to_int` nous renvoie un résultat sous la forme d'un entier
+si c'est un succès et d'une chaîne de caractères si c'est une erreur (un
+message contenant plus d'information par exemple)[^2]. Rust insiste très fortement
+pour que l'on traite le cas d'erreur puisque nous devons utiliser le *pattern match*
+pour lire le valeur ou au moins vérifier que le résultat est de type `Ok`.
+De plus, nous pouvons voir directement dans la signature de la fonction que
+celle-ci peut échouer.
 
-### Conlusion
+### Conclusion
 
 Nous avons vu ici la spécificité des énumérations en Rust : elles peuvent contenir
 des informations qui peuvent différer selon la valeur. Ces énumérations font parties
 intégrantes de la gestion des erreurs et des valeurs optionnelles. Enfin, la manière
 de récupérer les informations au sein des énumérations renforcent la sécurité des
-programmes que l'on écrit : on doit vérifier qu'une variable optionnelle contient
-quelque chose ou qu'une méthode qui peut échouer ait réussi avant de poursuivre.
+programmes que l'on écrit : on doit vérifier qu'une variable optionnelle contienne
+quelque chose, ou qu'une méthode susceptible d'échouer ait réussi avant de poursuivre.
 
 Dans le prochain chapitre, nous répondrons à la question suivante : Rust est-il
 orienté objet ? *(en cours d'écriture)*

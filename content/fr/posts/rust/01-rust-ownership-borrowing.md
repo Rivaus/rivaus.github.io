@@ -40,10 +40,10 @@ fn modify_foo(foo : Foo) {
 ```
 
 Problème, cela ne compile pas et Rust retourne l'erreur `borrow of moved value a`.
-En Rust, une variable possède un unique propriétaire, quand on appelle `modify_foo`,
+En Rust, une variable possède un unique propriétaire. Quand on appelle `modify_foo`,
 on transfère la propriété (*ownership*) de `Foo` à la fonction : la variable `a`
 n'est donc plus utilisable dans `main`. Heureusement, on peut partager une référence
-vers un object sans en transférer la propriété. La référence ne fait qu'emprunter
+vers un objet sans en transférer la propriété. La référence ne fait qu'emprunter
 (*borrow* en anglais) l'objet pour une durée déterminée (plus d'info sur cette
 durée dans [l'article suivant](02-rust-memory-and-lifetime)) comme ceci :
 `let reference_to_a = &a`. On peut aussi utiliser `&` pour signifier qu'une
@@ -61,12 +61,12 @@ fn modify_foo(foo : &Foo) { // Une référence me suffit, pas besoin de plus !
 }
 ```
 
-## L'immuabilité comme comportement pas défaut, l'explicite comme crédo
+## L'immuabilité comme comportement par défaut, l'explicite comme crédo
 
 Le compilateur n'est toujours pas satisfait, il ne peut pas changer la valeur de
 `foo.property`. Par défaut, en Rust, les variables sont immuables. Il faut explicitement
 définir les variables comme modifiables avec le mot-clé `mut`.
-Idem pour les références, par défaut, la référence pointera vers une valeur immuable
+Idem pour les références : par défaut, la référence pointera vers une valeur immuable
 (même si la valeur est définie comme modifiable). Il faut donc également modifier
 la signature de notre fonction:
 
@@ -111,9 +111,9 @@ peut créer :
 
 Cela est important pour prévenir les *data race* : ici il n'est pas sécurisé de lire
 ou de modifier `a` dans `modify_foo` via une référence car une autre référence
-modifiable `b` a été créée et pourrait modifier `a` a tout moment
-(dans un autre *thread* par exemple) ! Le compilateur est exigeant, mais pour notre
-bien, pour évider d'éventuels bugs.
+modifiable `b` a été créée et pourrait modifier `a` à tout moment
+(dans un autre *thread* par exemple) ! Le compilateur est exigeant, mais il l'est
+pour notre bien, pour évider d'éventuels bugs.
 
 *Note: si on commente la ligne `b.property = 20;`, le compilateur est assez intelligent
 pour voir que le caractère modifiable de la référence `b` est inutile et ainsi le
@@ -161,7 +161,7 @@ fn modify_foo(foo : &mut Foo) {
 ## Conclusion
 
 Voici la fin de nos premiers pas dans le monde de Rust avec ce concept fondamental
-de l'*ownership*. Il peut paraitre contraignant aux premiers abords mais vise à
+de l'*ownership*. Il peut paraître contraignant aux premiers abords mais vise à
 réduire les sources de bug et permet au compilateur des optimisations impossibles
 sans ces informations ! Remarquez aussi que le compilateur a su nous donner
 de bons conseils à chaque fois pour régler nos problèmes ! De plus, toutes
@@ -184,8 +184,8 @@ fn consume(foo : Foo) {...}
 ```
 
 On verra plus tard que les mêmes principes régissent les méthodes d'instance
-d'objet, en coup d'oeil on peut voir si notre objet est modifié quand on appelle
-une de ses méthode. C'est un élément que j'apprécie beaucoup. C++ propose la même
+d'objet : en un coup d'oeil on peut voir si notre objet est modifié quand on appelle
+une de ses méthodes. C'est un élément que j'apprécie beaucoup. C++ propose la même
 chose mais avec un choix inverse : la modification possible par défaut, l'immuabilité
 en exception, je préfère le choix de Rust.
 
