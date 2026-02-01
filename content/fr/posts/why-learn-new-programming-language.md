@@ -44,8 +44,8 @@ se différencier sur plusieurs aspects :
 - compilé ou interprété
 
 Deux langages me permettent actuellement de faire ce chemin : Rust et
-Python. Pour ne pas rendre ce article indigeste, je vais consacren courer une série d'articles
-sur ces deux langages, en essayant de mettre en avant leurs spécificités
+Python. Pour ne pas rendre ce article indigeste, je vais consacren courer une série
+d'articles sur ces deux langages, en essayant de mettre en avant leurs spécificités
 et ce qu'ils peuvent nous apporter.
 
 - [A la découverte de Rust](rust/learn-rust)
