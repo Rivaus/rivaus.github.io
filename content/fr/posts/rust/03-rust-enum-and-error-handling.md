@@ -127,8 +127,8 @@ de récupérer les informations au sein des énumérations renforcent la sécuri
 programmes que l'on écrit : on doit vérifier qu'une variable optionnelle contienne
 quelque chose, ou qu'une méthode susceptible d'échouer ait réussi avant de poursuivre.
 
-Dans le prochain chapitre, nous répondrons à la question suivante : Rust est-il
-orienté objet ? *(en cours d'écriture)*
+Dans le prochain chapitre, nous répondrons à la question suivante : [Rust est-il
+orienté objet](04-rust-object-oriented-programing) ? *(en cours d'écriture)*
 
 [^1]: En réalité, `Option<T>` possède une méthode `unwrap()` qui permet de récupér directement
 la valeur à l'intérieur si la variable vaut `Some(...)`. Cependant, cette méthode fera planter

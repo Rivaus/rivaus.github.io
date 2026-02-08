@@ -77,7 +77,6 @@ est une référence vers un espace mémoire non valide. Dans les langages avec *
 collector*, les objets sont en vie tant qu'on a besoin d'eux, références comprises,
 il n'y a donc pas ce problème.
 
-
 Exemple en C tiré de la page wikipédia des *dangling pointer*:
 
 ```c
