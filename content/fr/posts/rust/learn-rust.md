@@ -33,15 +33,15 @@ Concrètement, comment cela se transcrit-il ? Quelles sont ses spécificités ?
 
 ## Le voyage
 
-J'ai décidé de découper chaque fonctionnalité que j'ai trouvé intéressante dans un
-article dédié : ceci est donc purement subjectif et absolument pas exhaustif.
+J'ai décidé de découper chaque fonctionnalité que j'ai trouvé intéressante dans
+un article dédié : ceci est donc purement subjectif et absolument pas exhaustif.
 Cela a pour but de fournir une petite introduction au langage :
 
 - [(1) : ownership & borrowing](01-rust-ownership-borrowing)
 - [(2) : gestion de la mémoire et lifetime](02-rust-memory-and-lifetime)
 - [(3) : les enums et gestion des erreurs](03-rust-enum-and-error-handling.md)
 - [(4) : orienté objet ?](04-rust-object-oriented-programing.md)
-- (5) : programmation concurrente *(en cours d'écriture)*
+- [(5) : programmation parallèle](05-rust-multitheading.md)
 - (6) : un ecosystème bien pensé *(en cours d'écriture)*
 
 D'ailleurs, si après tout cela, l'envie vous prend d'apprendre ce langage,
