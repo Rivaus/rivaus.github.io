@@ -78,39 +78,39 @@ summaryLength = 0
     theme = "transparent_dark"
 
 [languages]
-    [languages.en]
-        languageName = "English"
-        contentDir = 'content/en'
-        title = "Quentin Tran"
+    # [languages.en]
+    #     languageName = "English"
+    #     contentDir = 'content/en'
+    #     title = "Quentin Tran"
 
-        [languages.en.params]
-            subtitle = "A simple, retro theme for Hugo"
-            owner = ""
-            keywords = ""
-            copyright = "Quentin Tran"
-            menuMore = "Show more"
-            readMore = "Read more"
-            readOtherPosts = "Read other posts"
-            newerPosts = "Newer posts"
-            olderPosts = "Older posts"
-            missingContentMessage = "Page not found..."
-            missingBackButtonLabel = "Back to home page"
-            minuteReadingTime = "min read"
-            words = "words"
+    #     [languages.en.params]
+    #         subtitle = "A simple, retro theme for Hugo"
+    #         owner = ""
+    #         keywords = ""
+    #         copyright = "Quentin Tran"
+    #         menuMore = "Show more"
+    #         readMore = "Read more"
+    #         readOtherPosts = "Read other posts"
+    #         newerPosts = "Newer posts"
+    #         olderPosts = "Older posts"
+    #         missingContentMessage = "Page not found..."
+    #         missingBackButtonLabel = "Back to home page"
+    #         minuteReadingTime = "min read"
+    #         words = "words"
 
-        [languages.en.params.logo]
-            logoText = "Quentin Tran"
-            logoHomeLink = "/"
+    #     [languages.en.params.logo]
+    #         logoText = "Quentin Tran"
+    #         logoHomeLink = "/"
 
-        [languages.en.menu]
-            [[languages.en.menu.main]]
-                identifier = "guides"
-                name = "Guides"
-                url = "/guides"
-            [[languages.en.menu.main]]
-                identifier = "about"
-                name = "About"
-                url = "/about"
+    #     [languages.en.menu]
+    #         [[languages.en.menu.main]]
+    #             identifier = "guides"
+    #             name = "Guides"
+    #             url = "/guides"
+    #         [[languages.en.menu.main]]
+    #             identifier = "about"
+    #             name = "About"
+    #             url = "/about"
 
     [languages.fr]
         languageName = "Français"
