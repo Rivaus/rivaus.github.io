@@ -101,9 +101,9 @@ les données qu'elle contient,
 - avec `impl` on définit les méthodes liées à cette structure. Si les méthodes
 prennent comme premier argument `self, &self, ou &mut self`, c'est que ce sont
 des méthodes d'instances. Sinon, ce sont des méthodes dites associées qui s'appellent
-directement depuis la nom de la structure. Par exemple, en Rust, les structures n'ont
-pas de constructeur par défaut mais par convention, on définit souvent une méthode
-associée nommée `new` pour construire l'objet,
+directement depuis la nom de la structure. Par exemple, en Rust, les structures
+n'ont pas de constructeur par défaut mais par convention, on définit souvent une
+méthode associée nommée `new` pour construire l'objet,
 - par défaut, les propriétés et méthodes ne sont accessibles que dans le module
 où est définie la structure (généralement, le fichier de définition).
 Avec le modificateur `pub`, les méthodes `available_books` et `borrow_book`
@@ -172,14 +172,15 @@ compilation quel type concret sera passé en argument, le langage utilise le
 
 Nous avons vu - rapidement et sans entrer dans les détails - que Rust n'est
 pas un langage orienté objet au sens strict. Cependant, il propose des concepts
-similaires avec les `structs` ou les `traits` auquel il ajoute ses spécificités :
+similaires avec les `structs` ou les `traits` auquel il ajoute ses spécificités:
 unique propriétaire, sécurité mémoire, etc.
 Si vous souhaitez plus de détails sur ce sujet, sachez que le tutorial officiel
 dédie un [chapitre](https://doc.rust-lang.org/book/ch18-00-oop.html)
 complet sur la question !
 
 Dans le prochain chapitre, nous verrons comment les spécificités de Rust
-nous permettent d'écrire du code concurrant plus sécurisé ! (*en cours d'écriture*)
+nous permettent d'écrire du [code parallèle plus sécurisé](05-rust-multitheading.md)
+!
 
 [^1]: [Why extends is evil](https://web.archive.org/web/20190224073940/https://www.javaworld.com/article/2073649/core-java/why-extends-is-evil.html)
 [^2]: [Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)

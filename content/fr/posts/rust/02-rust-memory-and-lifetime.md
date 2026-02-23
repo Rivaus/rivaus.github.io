@@ -62,8 +62,8 @@ fn main()
 }
 ```
 
-A la différence de C ou de C++ sans les *smart pointer*, la dé-allocation de la mémoire
-allouée sur la pile est automatique, il n'y a pas de risque d'oublier d'appeler
+A la différence de C ou de C++ sans les *smart pointer*, la dé-allocation de la
+mémoire allouée sur la pile est automatique, il n'y a pas de risque d'oublier d'appeler
 `free` ou `delete` et donc de créer des memory leaks[^3].
 
 ## Durée de vie ou comment supprimer les *dangling references*
@@ -189,8 +189,8 @@ durée de vie.
 
 Rust a repris une forme de syntaxe que l'on retrouve dans de nombreux langages
 pour dire qu'une méthode/object est générique par rapport à un type mais en l'adaptant
-à une durée de vie pour garantir la sécurité des références. D'ailleurs, Rust a aussi
-de la généricité sur les types, les deux syntaxes peuvent donc co-exister.
+à une durée de vie pour garantir la sécurité des références. D'ailleurs, Rust a
+aussi de la généricité sur les types, les deux syntaxes peuvent donc co-exister.
 
 ## Conclusion
 
@@ -203,5 +203,6 @@ On continue avec une autre spécificité, [les énumérations et la gestion des 
 
 [^1]: Ceci est un jeu de mot trop facile et pas forcément pertinent.
 [^2]: C# donne un peu plus de liberté via les structs ou des mots clés tels que `stackalloc`.
-[^3]: il est en réalité possible de faire des fuite mémoires avec des références cycliques mais cela sort du cadre de l'article.
+[^3]: il est en réalité possible de faire des fuite mémoires avec des références cycliques
+mais cela sort du cadre de l'article.
 [^4]: je suis médisant, je viens de tester, j'ai heureusement un warning, mais ça reste léger.
