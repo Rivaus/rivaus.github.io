@@ -208,7 +208,7 @@ Bonus :
 
 - Sachez également que pour des objets aussi simples que des entiers, il
 existe des structures de données telles que `AtomicU32` faites pour lire et
-modifier des nombres sans erreurs dans du code parallèle.
+modifier des nombres sans risque dans du code parallèle.
 - Les règles de Rust forcent parfois à envisager l'écriture de code parralèle
 selon des motifs différents qui évitent les problèmes d'accès concurrent.
 Par exemple, la documentation officielle cite celle du langage Go avec ce très
