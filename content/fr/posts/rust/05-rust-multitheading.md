@@ -1,13 +1,13 @@
 +++
 date = '2026-02-22'
 draft = false
-title = 'Introduction à Rust (5) : du multithreading sans-souci ?'
+title = 'Introduction à Rust (5) : du multithreading sans souci ?'
 tags = ['rust', 'learn', 'programming']
 +++
 
 Dans cet article, je vais tenter de vous expliquer comment [les spécificités](learn-rust.md)
-du langage Rust vues rendent l'écriture de code parallélisable plus sécuritaire.
-Souvent, lorsque l'on parle d'exécution de code parallèle (ou *multithreadé* ),
+du langage Rust rendent l'écriture de code parallélisable plus sûr.
+Quand on parle d'exécution de code parallèle (ou *multithreadé* ),
 on évoque la programmation concurrente. Rust possède également le support de l'asynchrone
 avec le duo [async/await](https://doc.rust-lang.org/book/ch17-00-async-await.html).
 Cependant, je trouve son utilisation relativement similaire aux autres langages,
@@ -53,7 +53,7 @@ static void IncrementCounter(Counter counter)
 
 Ici le résultat final peut varier et ne pas toujours valoir 200000.
 En effet l'opération `this.n++;` n'est pas [atomique](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_(informatique)):
-des incrémentations peuvent donc se perdre entre les deux *threads*.
+des incrémentations peuvent se perdre entre les deux *threads*.
 Cet exemple très simple peut faire sourire le développeur chevronné que vous
 êtes : vous auriez directement anticipé le problème et utilisé le mot clé
 `lock` pour ne pas avoir de problème !
@@ -69,13 +69,13 @@ for (int i = 0; i < 1000000; i++)
 //...
 ```
 
-Néanmoins :
+Cependant :
 
 - dans de vrais projets, le contexte d'exécution n'est pas aussi évident et vous
 pourriez ne pas voir que votre code s'exécute dans deux *threads* différents,
 - même sur un exemple simple, C# nous a laissé faire *tranquillou bilou*.
 
-Tentons de faire pareil en Rust :
+Essayons de faire la même chose en Rust :
 
 ```rust
 use std::thread;
@@ -201,7 +201,7 @@ fn main() {
 }
 ```
 
-Et voila ! Ca compile et nous sommes sûrs de toujours obtenir
+Et voilà ! Ca compile et nous sommes sûrs de toujours obtenir
 200000 en résultat final !
 
 Bonus :
@@ -209,7 +209,7 @@ Bonus :
 - Sachez également que pour des objets aussi simples que des entiers, il
 existe des structures de données telles que `AtomicU32` faites pour lire et
 modifier des nombres sans risque dans du code parallèle.
-- Les règles de Rust forcent parfois à envisager l'écriture de code parralèle
+- Les règles de Rust forcent parfois à envisager l'écriture de code parallèle
 selon des motifs différents qui évitent les problèmes d'accès concurrent.
 Par exemple, la documentation officielle cite celle du langage Go avec ce très
 beau dicton : [Do not communicate by sharing memory; instead, share memory by communicating](https://go.dev/doc/effective_go#concurrency).
@@ -218,7 +218,7 @@ Pour son utilisation en Rust, encore une fois je vous recommande le [tutoriel of
 ## Conclusion
 
 Finalement, la solution Rust est relativement similaire à celle de C#,
-on doit utiliser un verrou quand on modifie l'objet pour être sûr
+il doit utiliser un verrou quand on modifie l'objet pour être sûr
 d'être le seul à le modifer. La syntaxe est plus verbeuse et plus
 explicite en Rust mais en contrepartie nous avons été obligés de développer
 une solution sans bug [^3], est-ce donc si grave d'écrire un peu plus de code ?
