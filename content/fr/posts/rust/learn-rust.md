@@ -21,8 +21,8 @@ pour lui donner sa chance !
 
 Si on cherche sur Internet les caractéristiques du langage, on tombe sur :
 
-- sécurisé du point de vue de la mémoire et de la programmation concurrente : le
-langage semble promettre des programmes moins buggés,
+- sécurisé du point de vue de la mémoire et de la programmation *multithread* :
+le langage semble promettre des programmes moins buggés,
 - *blazingly fast* [^1]: on peut donc s'attendre à un langage assez *bas niveau*
 : le langage est d'ailleurs [entré récemment officiellement dans le kernel Linux](https://thenewstack.io/rust-goes-mainstream-in-the-linux-kernel/)
 aux côtés de C. Cependant, il semble aussi utilisé pour des applications
@@ -43,6 +43,7 @@ Cela a pour but de fournir une petite introduction au langage :
 - [(4) : orienté objet ?](04-rust-object-oriented-programing.md)
 - [(5) : programmation parallèle](05-rust-multitheading.md)
 - (6) : un ecosystème bien pensé *(en cours d'écriture)*
+- (6) : conclusion sur cette petite aventure ! *(en cours d'écriture)*
 
 D'ailleurs, si après tout cela, l'envie vous prend d'apprendre ce langage,
 sachez que le [tutorial officiel](https://doc.rust-lang.org/book/) est de
