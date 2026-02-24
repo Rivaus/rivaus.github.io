@@ -5,15 +5,17 @@ title = 'Introduction à Rust (5) : du multithreading sans souci ?'
 tags = ['rust', 'learn', 'programming']
 +++
 
-Dans cet article, je vais tenter de vous expliquer comment [les spécificités](learn-rust.md)
-du langage Rust rendent l'écriture de code parallélisable plus sûr.
-Quand on parle d'exécution de code parallèle (ou *multithreadé* ),
-on évoque la programmation concurrente. Rust possède également le support de l'asynchrone
+Dans [l'introduction de cette série d'articles](learn-rust.md) j'avais évoqué que
+Rust promettait du code parallèle (ou *mutithread*) plus sûr, voyons
+comment !
+
+Remarque : *souvent, quand on évoque le multithreading, on aborde la programmation
+concurrente. Rust possède également le support de l'asynchrone
 avec le duo [async/await](https://doc.rust-lang.org/book/ch17-00-async-await.html).
 Cependant, je trouve son utilisation relativement similaire aux autres langages,
-donc je ne l'évoquerai pas ici [^1].
+donc je ne l'évoquerai pas ici [^1].*
 
-## Analogie entre C# et Rust
+## Les riques du code multithread : un exemple en C#
 
 Prenons un exemple classique pour illustrer les problèmes que peut poser le code
 parallèle en C#.
@@ -144,10 +146,10 @@ nous bloque à nouveau.
 
 ## Comment résoudre le problème ?
 
-Dans l'article sur la [mémoire et la durée de vie], j'évoquais la notion
-de pointeur intelligent avec son implémentation la plus simple `Box<T>`.
-Il faut savoir qu'il existe un autre pointeur de base `Rc<T>`
-(pour `Reference Counting`) qui permet d'avoir plusieurs références vers un objet.
+Dans l'article sur la [mémoire et la durée de vie](02-rust-memory-and-lifetime.md),
+j'évoquais la notion de pointeur intelligent avec son implémentation la
+plus simple `Box<T>`. Il faut savoir qu'il existe un autre pointeur de base `Rc<T>`
+(pour *Reference Counting*) qui permet d'avoir plusieurs références vers un objet.
 Néanmoins, si nous tentons de l'utiliser ici, nous sommes aussi bloqués
 car le type `Rc<T>` n'est pas autorisé à être transféré entre deux threads [^2].
 
@@ -207,8 +209,8 @@ Et voilà ! Ca compile et nous sommes sûrs de toujours obtenir
 Bonus :
 
 - Sachez également que pour des objets aussi simples que des entiers, il
-existe des structures de données telles que `AtomicU32` faites pour lire et
-modifier des nombres sans risque dans du code parallèle.
+existe des structures de données telles que [AtomicU32](https://doc.rust-lang.org/std/sync/atomic/struct.AtomicU32.html)
+faites pour lire et modifier des nombres sans risque dans du code parallèle.
 - Les règles de Rust forcent parfois à envisager l'écriture de code parallèle
 selon des motifs différents qui évitent les problèmes d'accès concurrent.
 Par exemple, la documentation officielle cite celle du langage Go avec ce très
@@ -234,7 +236,7 @@ nécessiter une compréhension assez fine -que je ne possède pas totalement-.
 Si vous êtes curieux et que vous avez un peu approfondi le language de votre
 côté, je vous suggère [cette vidéo](https://www.youtube.com/watch?v=9RsgFFp67eo).
 [^2]: il me semblait trop long d'expliquer ici pourquoi, pour des débuts d'explication
-pour satisfaire votre curiosité, je vous invite à lire [ceci](https://doc.rust-lang.org/book/ch16-04-extensible-concurrency-sync-and-send.html).
+afin de satisfaire votre curiosité, je vous invite à lire [ceci](https://doc.rust-lang.org/book/ch16-04-extensible-concurrency-sync-and-send.html).
 [^3]: dans ces introductions, je présente le langage comme étant assez magique
 et résolvant tous les problèmes de la Terre, je tempérerai mes affirmations
 dans la dernière partie de cette série !

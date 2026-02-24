@@ -109,9 +109,9 @@ peut créer :
 - soit N références actives vers un objet immuable
 - soit une et une seule référence active vers un object modifiable
 
-Cela est important pour prévenir les *data race* : ici il n'est pas sécurisé de lire
-ou de modifier `a` dans `modify_foo` via une référence car une autre référence
-modifiable `b` a été créée et pourrait modifier `a` à tout moment
+Cela est important pour prévenir les *data race* : ici il n'est pas sécurisé de
+lire ou de modifier `a` dans `modify_foo` via une référence car une autre
+référence modifiable `b` a été créée et pourrait modifier `a` à tout moment
 (dans un autre *thread* par exemple) ! Le compilateur est exigeant, mais il l'est
 pour notre bien, pour évider d'éventuels bugs.
 
@@ -121,10 +121,10 @@ code compile*
 
 On peut régler le problème de plusieurs manières :
 
-- On peut modifier `a` via `b` avant de créer une nouvelle référence modifiable vers
-`a`. Puisque la variable `b` n'est pas utilisée ensuite (elle n'est alors plus active),
-le compilateur comprend qu'il n'y a aucun risque à créer une nouvelle référence pour
-modifier l'objet.
+- On peut modifier `a` via `b` avant de créer une nouvelle référence modifiable
+vers `a`. Puisque la variable `b` n'est pas utilisée ensuite (elle n'est alors
+plus active), le compilateur comprend qu'il n'y a aucun risque à créer une
+nouvelle référence pour modifier l'objet.
 
 ```rust
 fn main()
