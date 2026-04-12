@@ -228,7 +228,7 @@ On notera également que Rust a vérifié la validité du code *multithreadé*
 à la compilation, ce qui est un énorme avantage !
 
 On arrête pour le contenu technique de cette série ! Dans la prochaine partie,
-je vous introduirai l'écosystème du langage(**en cours d'écriture**).
+je vous introduirai [l'écosystème du langage](06-rust-tooling.md).
 
 [^1]: le code asynchrone Rust est similaire à celui de C#, Python,
 Typescript, etc. Néanmoins certains cas d'utilisation spécifiques peuvent

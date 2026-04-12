@@ -42,8 +42,8 @@ Cela a pour but de fournir une petite introduction au langage :
 - [(3) : les enums et gestion des erreurs](03-rust-enum-and-error-handling.md)
 - [(4) : orienté objet ?](04-rust-object-oriented-programing.md)
 - [(5) : programmation parallèle](05-rust-multitheading.md)
-- (6) : un ecosystème bien pensé *(en cours d'écriture)*
-- (6) : conclusion sur cette petite aventure ! *(en cours d'écriture)*
+- [(6) : des outils bien pensés](06-rust-tooling.md)
+- (7) : conclusion sur cette petite aventure ! *(en cours d'écriture)*
 
 D'ailleurs, si après tout cela, l'envie vous prend d'apprendre ce langage,
 sachez que le [tutorial officiel](https://doc.rust-lang.org/book/) est de
