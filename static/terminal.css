@@ -2,3 +2,22 @@ p {
     text-align: justify;
     text-justify: inter-word;
 }
+/*:root {
+    --font-size: 1rem;
+}
+
+h2 {
+    font-size: calc(var(--font-size) * 1.1);
+}
+
+.post {
+    padding: 15px 0;
+}
+*/
+.post-content {
+    margin-top: 0px;
+}
+
+a.read-more {
+    font-size: calc(var(--font-size) * 0.9);
+}
