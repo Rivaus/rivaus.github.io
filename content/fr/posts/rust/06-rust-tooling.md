@@ -96,6 +96,6 @@ vérifier que ce code en commentaire compile, exécutez `cargo test --doc` !
 Au final, rien de magique côté outil en Rust mais le fait que tout soit disponible
 sans dépendance externe, sans configuration par défaut rend le langage très
 agréable à tester/utiliser ! On arrive à la fin de notre parcours, débrieffons
-dans la prochaine section (*en cours d'écriture*) !
+dans la prochaine [section](07-rust-conclusion.md) !
 
 [^1]: il est possible de configure ce formatage pour rajouter des exceptions/cas customs
