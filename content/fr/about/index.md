@@ -15,5 +15,6 @@ en anglais mais pas pour générer le contenu.
 Réseaux
 
 - [Linkedin](https://www.linkedin.com/in/quentin-tran/)
+- [CV](CV.pdf)
 - [ArtStation](https://www.artstation.com/quentintran) : pas du tout graphiste mais
 grand amoureux de [Blender](https://www.blender.org/)
