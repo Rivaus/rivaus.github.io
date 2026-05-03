@@ -15,7 +15,7 @@ avec le duo [async/await](https://doc.rust-lang.org/book/ch17-00-async-await.htm
 Cependant, je trouve son utilisation relativement similaire aux autres langages,
 donc je ne l'évoquerai pas ici [^1].*
 
-## Les riques du code multithread : un exemple en C#
+## Les risques du code multithread : un exemple en C#
 
 Prenons un exemple classique pour illustrer les problèmes que peut poser le code
 parallèle en C#.

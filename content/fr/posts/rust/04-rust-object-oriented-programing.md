@@ -22,7 +22,7 @@ privée par exemple). Cela permet de supporter le concept d'[encapsulation](http
 Dans la plupart des langages orientés objet, ces structures sont définies par des
 **classes** que l'on peut **instancier** pour obtenir des **objets**.
 
-En Rust, nous n'avons pas de classe mais des **structs**.Le concept reste
+En Rust, nous n'avons pas de classe mais des **structs**. Le concept reste
 cependant assez similaire: ces structures peuvent contenir de la donnée et des méthodes.
 
 ```rust
